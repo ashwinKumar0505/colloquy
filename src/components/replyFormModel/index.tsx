@@ -15,7 +15,7 @@ import {
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useAddReply } from "../../queries/mutation";
-import { getUserId, getUserName } from "../../selectors";
+import { getUserName } from "../../selectors";
 
 const ReplyFormModel = ({
   isOpen,
@@ -30,7 +30,6 @@ const ReplyFormModel = ({
 }) => {
   const [reply, setReply] = useState("");
   const userName = useSelector(getUserName);
-  const userId = useSelector(getUserId);
   const toast = useToast();
 
   const showToast = (status: "error" | "success", message: string) => {
